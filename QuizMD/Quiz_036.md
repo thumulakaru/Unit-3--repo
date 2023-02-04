@@ -53,3 +53,8 @@ class Classroom:
 ![](https://github.com/thumulakaru/Unit-3--repo/blob/main/Quizzes/Quiz_036_result.png)
 
 **Fig.1** Results of the test file
+
+## UML Diagram
+![](https://github.com/thumulakaru/Unit-3--repo/blob/main/Quizzes/Quiz_036_UML_diagram.png)
+
+**Fig.2** UML diagram for the class
