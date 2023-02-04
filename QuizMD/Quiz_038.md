@@ -1,41 +1,36 @@
 # Quiz 38
 ## Code
 ```.py
-class CompoundInterest:
-    def __init__(self, principal:int, rate:float, year:int):
-        self.principal = principal
-        self.rate = rate
-        self.year = year
+from matplotlib import pyplot as plt, pyplot
+import random
+from Lessons.composition_travelling_salesman import City, Coordinate,country
+
+city_name = ["New York", "Los Angeles", "Chicago", "Houston", "Philadelphia", "Phoenix", "San Antonio", "San Diego", "Dallas", "San Jose"]
+
+capital = City("Washington DC", Coordinate(38.8951, -77.0367))
+us = country("United States", capital)
+
+for name in city_name:
+    city = City(name, Coordinate(random.randint(0,100), random.randint(0,100)))
+    us.new_city(city)
 
 
-class AccountingProgram:
-    def __init__(self):
-        self.compound = CompoundInterest(0, 0, 0)
-
-    def set_principal(self, principal):
-        if principal <= 0:
-            raise ValueError("Principal should be greater than zero")
-        self.compound.principal = principal
-        return f"Principal set to {self.compound.principal}"
-
-    def set_rate(self, rate):
-        if rate <= 0:
-            raise ValueError("Interest rate should be greater than zero")
-        self.compound.rate = rate
-        return f"Rate set to {self.compound.rate}"
-
-    def set_years(self, year):
-        if year <= 0:
-            raise ValueError("Years should be greater than zero")
-        self.compound.year = year
-        return f"Year set to {self.compound.year}"
-
-    def calculate_interest(self):
-        temp1 = self.compound.principal * (self.compound.rate + 1) ** self.compound.year
-        temp_f = "{:.2f}".format(temp1)
-        return float(temp_f)
+x = []
+y = []
+label = []
+for city in us.get_cities():
+    x.append(city.location.x)
+    y.append(city.location.y)
+    label.append(city.name)
+plt.scatter(x, y, s=100)
+for i, label in enumerate(label):
+    plt.annotate(label, (x[i], y[i]))
+plt.xlabel("Distance(km)")
+plt.ylabel("Distance(km)")
+plt.show()
 ```
 
 ## Evidence
-![](https://github.com/thumulakaru/Unit-3--repo/blob/main/Quizzes/Quiz_037_result.png)
+![](https://github.com/thumulakaru/Unit-3--repo/blob/main/Quizzes/Quiz_038_result.png)
+
 **Fig.1** Results of the test file
