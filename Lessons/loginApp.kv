@@ -1,0 +1,109 @@
+ScreenManager:
+    LoginScreen:
+        name:"LoginScreen"
+
+    RegistrationScreen:
+        name:"RegistrationScreen"
+
+
+<LoginScreen>:
+    FitImage:
+        source: "https://media.makeameme.org/created/but-you-dont-324364cad7.jpg"
+
+    MDCard:
+        size_hint:.6, .8
+        pos_hint: {"center_x":.5, "center_y":.5}
+        orientation:"vertical"
+
+        MDLabel:
+            size_hint:1, .1
+            font_style:"H2"
+            text: "Login"
+
+        MDTextField:
+            id:uname
+            hint_text:"Enter username or email"
+            size_hint_x: .8
+            pos_hint: {"center_x":.5}
+
+        MDTextField:
+            id:passwd
+            hint_text:"Enter password"
+            password: True
+            size_hint_x: .8
+            pos_hint:{"center_x":.5}
+
+        MDBoxLayout:
+            size_hint:1, .2
+            MDRaisedButton:
+                id:login
+                text:"Login"
+                on_press: root.try_login()
+                md_bg_color: "#a8dadc"
+                size_hint: .5, .5
+
+            MDRaisedButton:
+                id:registration
+                text:"Registration"
+                on_press: root.parent.current = "RegistrationScreen"
+                md_bg_color: "#a8dadc"
+                size_hint: .5, .5
+
+
+<RegistrationScreen>
+    FitImage:
+        source:"https://assets.reedpopcdn.com/digitalfoundry-2015-re-released-batman-arkham-knight-performance-analysis-1446125827445.jpg/BROK/resize/1920x1920%3E/format/jpg/quality/80/digitalfoundry-2015-re-released-batman-arkham-knight-performance-analysis-1446125827445.jpg"
+
+    MDCard:
+        size_hint:.6, .8
+        pos_hint: {"center_x":.5, "center_y":.5}
+        orientation:"vertical"
+
+        MDLabel:
+            size_hint:1, .1
+            font_style:"H2"
+            text: "Registration"
+
+        MDTextField:
+            id:uname
+            hint_text:"Enter username or email"
+            size_hint_x: .8
+            pos_hint: {"center_x":.5}
+
+        MDTextField:
+            id:email
+            hint_text:"Enter email"
+            size_hint_x: .8
+            pos_hint: {"center_x":.5}
+
+        MDTextField:
+            id:passwd1
+            hint_text:"Enter password"
+            password: True
+            size_hint_x: .8
+            pos_hint:{"center_x":.5}
+
+        MDTextField:
+            id:passwd2
+            hint_text:"Confirm the password"
+            password: True
+            size_hint_x: .8
+            pos_hint:{"center_x":.5}
+
+        MDBoxLayout:
+            size_hint:1, .2
+            MDRaisedButton:
+                id:register
+                text:"Register"
+                md_bg_color: "#ff0000"
+                on_press: root.try_register()
+                size_hint: .5, 1
+
+            MDRaisedButton:
+                id:back
+                text:"Back"
+                md_bg_color: "#a8dadc"
+                on_press: root.parent.current = "LoginScreen"
+                size_hint: .5, 1
+
+
