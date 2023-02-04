@@ -1,0 +1,24 @@
+Screen:
+    size: 500, 500
+
+    MDBoxLayout:
+        id: main_box
+        orientation: 'horizontal'
+        size_hint: .7, .3
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        md_bg_color: "blue"
+
+        MDLabel:
+            id: counter
+            size_hint: .5, 1
+            font_size: "34"
+            text: "Click 'Add+1' to start"
+
+        MDRaisedButton:
+            id: add_button
+            size_hint: .5, 1
+            font_size: "34"
+            text:"Add +1"
+            color: "black"
+            on_press: app.add()
+        

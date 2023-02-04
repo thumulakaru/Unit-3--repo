@@ -1,0 +1,24 @@
+Screen:
+    size: 500, 500
+
+    MDScreen:
+        id:"screen"
+        theme_style: "Light"
+
+
+        MDLabel:
+            id:name
+            text: "Thumula"
+            text_color: "#000000"
+            halign: "center"
+            font_size: "34pt"
+
+        MDRaisedButton:
+            id: mode_chip
+            text: "Dark Mode"
+            md_bg_color:"#000000"
+            text_color: "#FFFFFF"
+            pos_hint: {"left": 1}
+            icon_right: "close-circle-outline"
+            theme_style: self.theme_style
+            on_press:app.touch()
