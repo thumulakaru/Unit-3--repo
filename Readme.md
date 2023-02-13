@@ -1,4 +1,4 @@
-# Unit 2: A Distributed Weather Station for ISAK
+# Unit 3: A journal for math equations
 
 ## Criteria A: Planning
 
