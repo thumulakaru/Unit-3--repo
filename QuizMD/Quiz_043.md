@@ -1,5 +1,5 @@
 # Quiz 43
-## Python code
+## SQL code
 ```.py
 CREATE TABLE if not exists Movies(
     id INTEGER PRIMARY KEY,
