@@ -9,6 +9,9 @@ The client wants a journal to write down math questions that he find. He wants t
 
 
 ## Success Criteria
+1. A login/registration system.
+2. A black interface.
+3. The journaL should be able to record math questions/answers/points/memo and edit them.
 
 
 # Criteria B: Design
