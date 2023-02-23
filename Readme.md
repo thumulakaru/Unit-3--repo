@@ -6,7 +6,7 @@
 The client wants a journal to write down math questions that he find. He wants to edit them later if he thinks there's an addition to the question. He wants a login system for the journal and wants to change the details that he enters when he registers for the first time. Also he want to add the answers of the questions once he find them.
 
 ## Proposed Solution
-
+The client wants a journal that is able to enter journal entries which has login system and a registration system. I will be using python and kivy to create the journal interface. And I will use sqlite3 to store the user details and journal entries in a database and python will be used to control the console.
 
 ## Success Criteria
 1. A login/registration system.
