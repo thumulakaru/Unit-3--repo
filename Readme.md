@@ -19,9 +19,12 @@ The client wants a journal that is able to enter journal entries which has login
 ## System Diagram
 
 ## Record of Tasks
-| Task No | Planned Action                                                | Planned Outcome                                                                                                 | Time estimate | Target completion date | Criterion |
-|---------|---------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|---------------|------------------------|-----------|
-| 1       | Write the Problem context                        | 10min         | Nov 22                 | A         |
+| Task No |        Planned Action        |                  Planned Outcome                 | Time estimate | Target completion date | Criterion |
+|---------|:----------------------------:|:------------------------------------------------:|---------------|------------------------|-----------|
+| 1       | Write the problem definition | Have a clear idea of what the client wants       | 10 mins       | 2023 Feb 4             | A         |
+| 2       | Write the success criteria   | Have a clear conclusion of what the client wants | 5 mins        | 2023 Feb 10            | A         |
+| 3       | Write the proposed solution  | Explain what I'm going to be working on          | 8 mins        | 2023 Feb 23            | A         |
+| 4       | Draw System Diagram          | To have a better understanding about the system  |               |                        |           |
 
 ## Test Plan
 
