@@ -20,6 +20,9 @@ The client wants a journal that is able to enter journal entries which has login
 # Criteria B: Design
 
 ## System Diagram
+![](https://github.com/thumulakaru/Unit-3--repo/blob/main/Project/Sys_diagram.drawio.png)
+
+**Fig.2:** System Diagram
 
 ## Record of Tasks
 | Task No |             Planned Action             |                  Planned Outcome                 | Time estimate | Target completion date | Criterion |
