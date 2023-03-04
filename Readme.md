@@ -10,8 +10,11 @@ The client wants a journal that is able to enter journal entries which has login
 
 ## Success Criteria
 1. The journal should have a login/registration system.
-2. The journal should be able to record math questions/answers/memo and edit them later.
-3. 
+2. The journal should be able to record math questions with a title, an answer and a memo.
+3. The user should be able to view and edit journal entries later.
+4. The journal entries will be displayed separately to each user.
+5. The GUI should have a dark theme.
+6. All the inputting data has to go through validation inorder to stop the user from entering a blank entry.
 
 
 # Criteria B: Design
