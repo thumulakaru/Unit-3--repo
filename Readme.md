@@ -23,7 +23,22 @@ The client wants a journal that is able to enter journal entries which has login
 ## System Diagram
 ![](https://github.com/thumulakaru/Unit-3--repo/blob/main/Project/Sys_diagram.drawio.png)
 
-**Fig.2:** System Diagram
+**Fig.2** System Diagram 
+
+## ER Diagram
+![]()
+
+**Fig.3** ER Diagram 
+
+## UML Diagram
+![](https://github.com/thumulakaru/Unit-3--repo/blob/main/Project/UML_diag.png.png)
+
+**Fig.4** UML Diagram
+
+## Wireframe Diagram
+![](https://github.com/thumulakaru/Unit-3--repo/blob/main/Project/Wireframe_diag.png.png)
+
+**Fig.5** Wireframe Diagram
 
 ## Record of Tasks
 | Task No |             Planned Action             |                  Planned Outcome                 | Time estimate | Target completion date | Criterion |
