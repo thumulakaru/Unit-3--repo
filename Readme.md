@@ -45,15 +45,25 @@ Considering the clients requirements a GUI application seems to be the best opti
 **Fig.5** Wireframe Diagram
 
 ## Record of Tasks
-| Task No |             Planned Action             |                  Planned Outcome                 | Time estimate | Target completion date | Criterion |
-|---------|:--------------------------------------:|:------------------------------------------------:|---------------|------------------------|-----------|
-| 1       | Meet the client                        | Have an idea about what the client wants         | 10 mins       | 2023 Feb 1             | A         |
-| 2       | Write the problem definition           | Have a clear idea of what the client wants       | 10 mins       | 2023 Feb 4             | A         |
-| 3       | Write the success criteria             | Have a clear conclusion of what the client wants | 5 mins        | 2023 Feb 10            | A         |
-| 4       | Meet the client                        | Confirm on the final solution                    | 10 mins       | 2023 Fev 16            | A         |
-| 5       | Write the proposed solution            | Explain what I'm going to be working on          | 8 mins        | 2023 Feb 23            | A         |
-| 6       | Draw System Diagram(Partially for now) | To have a better understanding about the system  | 10 mins       | 2023 Feb 23            | B         |
-
+| Task No | Planned Action                        | Planned Outcome                                          | Time estimate | Target completion date | Criterion |
+|---------|---------------------------------------|----------------------------------------------------------|---------------|------------------------|-----------|
+| 1       | Meet the client                       | Have an idea about what the client wants                 | 10 mins       | 2023 Feb 1             | A         |
+| 2       | Write the problem definition          | Have a clear idea of what the client wants               | 10 mins       | 2023 Feb 4             | A         |
+| 3       | Write the success criteria            | Have a clear conclusion of what the client wants         | 5 mins        | 2023 Feb 10            | A         |
+| 4       | Write the proposed solution           | Write how the program is going to be built               | 10 mins       | 2023 Feb 19            | A         |
+| 5       | Meet the client                       | Confirm on the final solution                            | 10 mins       | 2023 Feb 20            | A         |
+| 6       | Write the proposed solution           | Explain what I'm going to be working on                  | 8 mins        | 2023 Feb 23            | A         |
+| 7       | Draw System Diagram                   | To have a better understanding about the system          | 10 mins       | 2023 Feb 28            | B         |
+| 8       | Draw ER Diagram                       | Understand the database clearly                          | 20 mins       | 2023 Feb 28            | B         |
+| 9       | Draw UML Diagram                      | Understand classes in the program                        | 30 mins       | 2023 Feb 28            | B         |
+| 10      | Draw Wireframe Diagram                | Understand the screens in the GUI                        | 45 mins       | 2023 Feb 28            | B         |
+| 11      | Draw Flow Diagram for login           | Understand the process of login                          | 30 mins       | 2023 Feb 28            | B         |
+| 12      | Draw Flow Diagram for inserting data  | Understand the process of inserting data into  the table | 20 mins       | 2023 Feb 28            | B         |
+| 13      | Draw the Flow Diagram for x           | Understand the process of x                              | 20 mins       | 2023 Feb 28            | B         |
+| 14      | Coding the main program. 1st  half    | Finish atleast half the program                          | 3 hrs         | 2023 Mar 2             | C         |
+| 15      | Coding the main program. 2nd hald     | Finish the entire program                                | 2 hrs         | 2023 Mar 3             | C         |
+| 16      | Minor bug fixes and small validations | Get rid of minor bugs                                    | 1 hr          | 2023 Mar 4             | C         |
+| 17      | Adding colours to the GUI             | Have a pleasant and clear user interface                 | 3 hrs         | 2023 Mar 5             | C         |
 ## Test Plan
 
 # Criteria C: Development
