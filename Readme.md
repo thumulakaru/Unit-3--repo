@@ -6,7 +6,11 @@
 The client wants a journal to write down math questions that he find. He wants to edit them later if he thinks there's an addition to the question. He wants a login system for the journal and wants to change the details that he enters when he registers for the first time. Also he want to add the answers of the questions once he find them.
 
 ## Proposed Solution
-The client wants a journal that is able to enter journal entries which has login system and a registration system. I will be using python and kivy to create the journal interface. And I will use sqlite3 to store the user details and journal entries in a database and python will be used to control the console.
+Considering the clients requirements a GUI application seems to be the best option. For this I decided to use Python as a programming language since it is able to run on multiple platforms[^1].For GUI development kivymd would be very suitable as this GUI framework is structured in object-oriented format which makes the development easy[^2]. SQLite is used to manage user inputted data as it is an embedded, serverless relational database which means the program and the database can be both localized.[^3]
+
+[^1]: Python Geeks. “Advantages of Python: Disadvantages of Python.” Python Geeks, 26 June 2021, https://pythongeeks.org/advantages-disadvantages-of-python/.
+[^2]: Gupta, Kaustubh. “What Is KivyMD: Creating Android Machine Learning Apps Using KivyMD.” *Analytics Vidhya*, 6 July 2021, https://www.analyticsvidhya.com/blog/2021/06/creating-android-ml-app-kivymd/#:~:text=KivyMD%20is%20built%20on%20the.
+[^3]: S, Ravikiran A. “What Is Sqlite? and When to Use It?” *Simplilearn.com*, Simplilearn, 16 Feb. 2023, https://www.simplilearn.com/tutorials/sql-tutorial/what-is-sqlite.
 
 ## Success Criteria
 1. The journal should have a login/registration system.
