@@ -15,6 +15,7 @@ The client wants a journal that is able to enter journal entries which has login
 4. The journal entries will be displayed separately to each user.
 5. The GUI should have a dark theme.
 6. All the inputting data has to go through validation inorder to stop the user from entering a blank entry.
+7. There should be pop up screens for the user registration.
 
 
 # Criteria B: Design
