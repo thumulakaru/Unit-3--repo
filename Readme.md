@@ -30,7 +30,7 @@ Considering the clients requirements a GUI application seems to be the best opti
 **Fig.2** System Diagram 
 
 ## ER Diagram
-![]()
+![](https://github.com/thumulakaru/Unit-3--repo/blob/main/Project/ER_diag.png)
 
 **Fig.3** ER Diagram 
 
