@@ -1,4 +1,4 @@
-# Unit 3: A journal for math equations
+# Unit 3: A journal for math Questions
 
 ## Criteria A: Planning
 
@@ -69,6 +69,15 @@ Considering the clients requirements a GUI application seems to be the best opti
 # Criteria C: Development
 
 ## List of techniques used
+| Software/Development Tools | Coding Structure Tools       | Libraries  |
+|----------------------------|------------------------------|------------|
+| PyCharm                    | OOP Structures(Classes)      | kivymd.app |
+| Python                     | SQL requests                 | Passlib    |
+| SQLite                     | Databases                    | sqlite     |
+| KivyMD                     | Encryption                   | kivymd.uix |
+| Tabnine AI code completion | For Loops                    |            |
+|                            | If-then-else statements      |            |
+|                            | ORM(Object Relation Mapping) |            |
 
 ## Development
 
