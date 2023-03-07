@@ -68,7 +68,7 @@ Considering the clients requirements a GUI application seems to be the best opti
 
 # Criteria C: Development
 
-## List of techniques used
+## Existing tools
 | Software/Development Tools | Coding Structure Tools       | Libraries  |
 |----------------------------|------------------------------|------------|
 | PyCharm                    | OOP Structures(Classes)      | kivymd.app |
@@ -78,6 +78,8 @@ Considering the clients requirements a GUI application seems to be the best opti
 | Tabnine AI code completion | For Loops                    |            |
 |                            | If-then-else statements      |            |
 |                            | ORM(Object Relation Mapping) |            |
+
+## List of techniques used
 
 ## Development
 
