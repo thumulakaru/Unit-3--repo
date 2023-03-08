@@ -92,8 +92,183 @@ Considering the clients requirements a GUI application seems to be the best opti
 |                            | ORM(Object Relation Mapping) |            |
 
 ## List of techniques used
+1. Object Oriented Programming(OOP)
+2. Object Relation Mapping(ORM):SQLite3
+3. KivyMD.app Library
+4. KivyMD.uix Library
+5. For loops
+6. if statements
+7. Password Hashing
+8. Interacting with Databases
+9. Arrays and Lists
+
 
 ## Development
+### Computational Thinking
+#### Decomposition
+Decomposition in Computational Thinking refers to breaking a complex problem or system into parts that are easier to conceive, understand, program, and maintain. In this project one of the key things was to display user entries uniquely to each user. As this was a complex process I first focused on making the table in the database easier to access for the developer by having a one to one relationship with the users table. After that I wrote a query to get data from the table while sorting them through the user id. Finally since the row numbers have a limit I decided to get the count of data that the user has entered.
+
+##### Create the table
+```.py
+    def create_table_2(self, namedb: str):
+        query = f"""CREATE TABLE if not exists entries(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id integer NOT NULL,
+            title text NOT NULL,
+            question text NOT NULL,
+            answer text,
+            memo text
+            )"""
+        self.cursor.execute(query)
+        self.connection.commit()
+```
+
+##### Get the data for the table
+```.py
+    def update(self):
+        # Read database and update file
+        db = database_handler("user_database.db")
+        # Getting data that is unique to the user
+        query = f"SELECT * FROM entries WHERE user_id = {EntryScreen.user_id}"
+        data = db.search(query)
+        db.close()
+        self.data_table.update_row_data(None, data)
+```
+
+##### Number of rows
+
+```.py
+db = database_handler("user_database.db")
+        query = f"SELECT count(*) FROM entries WHERE user_id = {EntryScreen.user_id}"
+        entrie_num = db.search(query)
+```
+
+```.py
+# Defining how long the table is going to be
+            rows_num = entrie_num[0][0],
+```
+
+#### Pattern Recognition
+Pattern recognition is the process of identifying patterns or regularities in data, while generalization is the ability to infer relationships between different patterns based on observed similarities. Abstraction involves distilling essential features or characteristics from a set of data so that it can be used to represent a more general concept. In computer science, these concepts are used in various technologies such as machine learning, natural language processing, and image recognition.
+
+In this program I identified how the popup messages are repititive which had a pattern from which I was able to write a general function for all the popup messages which helped me to reduce the length of my code.
+
+##### Popup messages
+
+##### Before
+```.py
+class RegistrationScreen(MDScreen):
+    def show_popup_uname_error(self):
+        # Create a dialog with the desired content
+        dialog = MDDialog(
+            title="Username error",
+            text="Username cannot be empty",
+            size_hint=(0.7, 0.3),
+            buttons=[
+                MDFlatButton(
+                    text="Close", on_release=lambda *args: dialog.dismiss()
+                )
+            ],
+        )
+      
+    def show_popup_email_error(self):
+        # Create a dialog with the desired content
+        dialog = MDDialog(
+            title="Email error",
+            text="Email cannot be empty",
+            size_hint=(0.7, 0.3),
+            buttons=[
+                MDFlatButton(
+                    text="Close", on_release=lambda *args: dialog.dismiss()
+                )
+            ],
+        )
+    def show_popup_pwd_empty(self):
+        # Create a dialog with the desired content
+        dialog = MDDialog(
+            title="Password error",
+            text="Password cannot be empty",
+            size_hint=(0.7, 0.3),
+            buttons=[
+                MDFlatButton(
+                    text="Close", on_release=lambda *args: dialog.dismiss()
+                )
+            ],
+        )
+    def show_popup_pwd_error(self):
+        # Create a dialog with the desired content
+        dialog = MDDialog(
+            title="Password error",
+            text="Passwords do not match",
+            size_hint=(0.7, 0.3),
+            buttons=[
+                MDFlatButton(
+                    text="Close", on_release=lambda *args: dialog.dismiss()
+                )
+            ],
+        )
+```
+
+###### After
+```.py
+class RegistrationScreen(MDScreen):    
+    def show_popup(self, title, messaI fge):
+        # Create a dialog with the desired content
+        dialog = MDDialog(
+            title=title,
+            text=message,
+            size_hint=(0.7, 0.3),
+            buttons=[
+                MDFlatButton(
+                    text="Close", on_release=lambda *args: dialog.dismiss()
+                )
+            ],
+        )
+        
+    self.show_popup("Username error", "Username cannot be empty")
+    self.show_popup("Email error", "Email cannot be empty")
+    self.show_popup("Password error", "Password cannot be empty")
+    self.show_popup("Password error", "Passwords do not match")
+```
+### Developing
+#### OOP
+OOP stands for Object-Oriented Programming. It is a programming paradigm that emphasizes the use of objects and classes to represent and manipulate data. In OOP, objects are instances of classes, which are defined as a blueprint or template for creating objects. OOP offeres many benefits such as modularity(reusable code for easy management) and Encapsuation(hiding implementation details for better security), Inheritance(for reduced duplication). Following is an example of OOP in my program.
+```.py
+class database_handler():
+  def __init__(self, namedb: str):
+  # code omitted for display of OOP structures
+
+  def run_query(self, query: str):
+  # code omitted for display of OOP structures
+
+  def search(self, query):
+  # code omitted for display of OOP structures
+
+  def close(self):
+  # code omitted for display of OOP structures
+
+  def create_table_1(self):
+  # code omitted for display of OOP structures
+
+  def create_table_2(self, namedb: str):
+  # code omitted for display of OOP structures
+
+  def enter_data_1(self, id, email, password, username):
+  # code omitted for display of OOP structures
+
+  def enter_data_2(self, user_id: int, title: str, question: str, answer: str, memo: str):
+  # code omitted for display of OOP structures
+
+  def update_data(self, entry_id: int, title: str, question: str, answer: str, memo: str):
+  # code omitted for display of OOP structures
+
+  def test_login(self, email: str, password: str):
+  # code omitted for display of OOP structures
+```
+
+Some of this code is used throughout the program to query data from the tables which made my program efficient as I was not using the same code over and over again.
+
+#### ORM
 
 
 # Criteria D: Functionality
