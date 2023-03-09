@@ -64,25 +64,40 @@ Considering the clients requirements a GUI application seems to be the best opti
 **Fig.8** Flow diagram for entering a new entry into the table
 
 ## Record of Tasks
-| Task No | Planned Action                        | Planned Outcome                                          | Time estimate | Target completion date | Criterion |
-|---------|---------------------------------------|----------------------------------------------------------|---------------|------------------------|-----------|
-| 1       | Meet the client                       | Have an idea about what the client wants                 | 10 mins       | 2023 Feb 1             | A         |
-| 2       | Write the problem definition          | Have a clear idea of what the client wants               | 10 mins       | 2023 Feb 4             | A         |
-| 3       | Write the success criteria            | Have a clear conclusion of what the client wants         | 5 mins        | 2023 Feb 10            | A         |
-| 4       | Write the proposed solution           | Write how the program is going to be built               | 10 mins       | 2023 Feb 19            | A         |
-| 5       | Meet the client                       | Confirm on the final solution                            | 10 mins       | 2023 Feb 20            | A         |
-| 6       | Write the proposed solution           | Explain what I'm going to be working on                  | 8 mins        | 2023 Feb 23            | A         |
-| 7       | Draw System Diagram                   | To have a better understanding about the system          | 10 mins       | 2023 Feb 28            | B         |
-| 8       | Draw ER Diagram                       | Understand the database clearly                          | 20 mins       | 2023 Feb 28            | B         |
-| 9       | Draw UML Diagram                      | Understand classes in the program                        | 30 mins       | 2023 Feb 28            | B         |
-| 10      | Draw Wireframe Diagram                | Understand the screens in the GUI                        | 45 mins       | 2023 Feb 28            | B         |
-| 11      | Draw Flow Diagram for login           | Understand the process of login                          | 30 mins       | 2023 Feb 28            | B         |
-| 12      | Draw Flow Diagram for inserting data  | Understand the process of inserting data into  the table | 20 mins       | 2023 Feb 28            | B         |
-| 13      | Draw the Flow Diagram for x           | Understand the process of x                              | 20 mins       | 2023 Feb 28            | B         |
-| 14      | Coding the main program. 1st  half    | Finish atleast half the program                          | 3 hrs         | 2023 Mar 2             | C         |
-| 15      | Coding the main program. 2nd hald     | Finish the entire program                                | 2 hrs         | 2023 Mar 3             | C         |
-| 16      | Minor bug fixes and small validations | Get rid of minor bugs                                    | 1 hr          | 2023 Mar 4             | C         |
-| 17      | Adding colours to the GUI             | Have a pleasant and clear user interface                 | 3 hrs         | 2023 Mar 5             | C         |
+| Task No | Planned Action                                 | Planned Outcome                                         | Time estimate | Target completion date | Criterion |
+|---------|------------------------------------------------|---------------------------------------------------------|---------------|------------------------|-----------|
+| 1       | Meet the client                                | Have an idea about what the client wants                | 10 mins       | 2023 Feb 1             | A         |
+| 2       | Write the problem definition                   | Have a clear idea of what the client wants              | 10 mins       | 2023 Feb 4             | A         |
+| 3       | Write the success criteria                     | Have a clear conclusion of what the client wants        | 5 mins        | 2023 Feb 10            | A         |
+| 4       | Write the proposed solution                    | Write how the program is going to be built              | 10 mins       | 2023 Feb 19            | A         |
+| 5       | Meet the client                                | Confirm on the final solution                           | 10 mins       | 2023 Feb 20            | A         |
+| 6       | Write the proposed solution                    | Explain what I'm going to be working on                 | 8 mins        | 2023 Feb 23            | A         |
+| 7       | Draw System Diagram                            | To have a better understanding about the system         | 10 mins       | 2023 Feb 28            | B         |
+| 8       | Draw ER Diagram                                | Understand the database clearly                         | 20 mins       | 2023 Feb 28            | B         |
+| 9       | Draw UML Diagram                               | Understand classes in the program                       | 30 mins       | 2023 Feb 28            | B         |
+| 10      | Draw Wireframe Diagram                         | Understand the screens in the GUI                       | 45 mins       | 2023 Feb 28            | B         |
+| 11      | Draw Flow Diagram for login                    | Understand the process of login                         | 30 mins       | 2023 Feb 28            | B         |
+| 12      | Draw Flow Diagram for inserting data           | Understand the process of inserting data into the table | 20 mins       | 2023 Feb 28            | B         |
+| 13      | Draw the Flow Diagram for a user registration  | Understand the process of registering a user            | 20 mins       | 2023 Feb 28            | B         |
+| 14      | Coding LoginScreen                             | Finish coding the LoginScreen                           | 15 mins       | 2023 Mar 2             | C         |
+| 15      | Alligning elements in the kivyscreen           | Finish allignments in LoginScreen                       | 30 mins       | 2023 Mar 2             | C         |
+| 16      | Coding RegistrationScreen                      | Finish coding the RegistrationScreen                    | 20 mins       | 2023 Mar 2             | C         |
+| 17      | Alligning elements in the kivyscreen           | Finish allignments in RegistrationScreen                | 20 mins       | 2023 Mar 2             | C         |
+| 18      | Coding SelectionScreen                         | Finish coding the SelectionScreen                       | 15 mins       | 2023 Mar 2             | C         |
+| 19      | Alligning elements in the kivyscreen           | Finish allignments in SelectionScreen                   | 10 mins       | 2023 Mar 2             | C         |
+| 20      | Coding the EntryScreen                         | Finish coding the EntryScreen                           | 20 mins       | 2023 Mar 2             | C         |
+| 21      | Alligning elements in the kivyscreen           | Finish allignments in EntryScreen                       | 60 mins       | 2023 Mar 2             | C         |
+| 22      | Coding the pre_enter of TableScreen            | Finish the pre_enter function                           | 60 mins       | 2023 Mar 3             | C         |
+| 23      | Coding the rest of TableScreen                 | Finish coding the rest of TableScreen                   | 20 mins       | 2023 Mar 3             | C         |
+| 24      | Allignments for the TableScreen                | Finish the allignments for the TableScreen              | 15 mins       | 2023 Mar 3             | C         |
+| 25      | Coding the DisplayScreen                       | Finish coding the DisplayScreen                         | 30 mins       | 2023 Mar 3             | C         |
+| 26      | Alligning elements in the kivyscreen           | Finish the allignments of DisplayScreen                 | 20 mins       | 2023 Mar 3             | C         |
+| 27      | Coding the EntryEditScreen                     | Finish coding the EntryEditScreen                       | 30 mins       | 2023 Mar 3             | C         |
+| 28      | Alligning the elements in the  kivyscreen      | Finish the allignments of EntryEditScreen               | 45 mins       | 2023 Mar 3             | C         |
+| 29      | Coding the popup dialogs                       | Finish the dialogs                                      | 60 mins       | 2023 Mar 3             | C         |
+| 30      | Finalise the program                           | Finish coding the program                               | 1 hr          | 2023 Mar 4             | C         |
+| 31      | Adding colours to the GUI                      | Have a pleasant and clear user interface                | 3 hrs         | 2023 Mar 5             | C         |
+| 32      | Record and upload the video                    | Finish the entire project                               | 1 hr          | 2023 Mar 10            | C         |
 
 ## Test Plan
 | Type                | Description                               | Process                                                                                                                                                                                                                                                                                                          | Anticipated Outcome                                                                                                                                              |
