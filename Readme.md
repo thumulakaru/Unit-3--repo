@@ -551,3 +551,6 @@ class EntryEditScreen(MDScreen)
 
 A special thanks to Olivia Leung, class of 2025 for the design of the GUI.
 # Criteria D: Functionality
+
+## Project Demonstration
+![Link for the video](https://drive.google.com/file/d/1VSOciE6K-yTsEfyFTkOiwJUjVxxM9YoE/view?usp=share_link)
