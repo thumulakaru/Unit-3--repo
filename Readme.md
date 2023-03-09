@@ -1,4 +1,7 @@
 # Unit 3: A journal for math Questions
+![](https://github.com/thumulakaru/Unit-3--repo/blob/main/Project/Client.gif)
+
+**Fig.1** My client being frustrated with manual journals
 
 ## Criteria A: Planning
 
