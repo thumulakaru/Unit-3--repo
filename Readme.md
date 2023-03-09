@@ -242,7 +242,7 @@ class RegistrationScreen(MDScreen):
                 )
             ],
         )
-        
+    # The code has been reduced for demonstration purposes    
     self.show_popup("Username error", "Username cannot be empty")
     self.show_popup("Email error", "Email cannot be empty")
     self.show_popup("Password error", "Password cannot be empty")
@@ -438,7 +438,7 @@ This code is used to verify the password of an existing user. And if the details
             # Making the error visible
             self.ids.passwd.error = True
             self.ids.uname.error = True
-            RegistrationScreen.show_popup("Email error", "Email not found")
+            RegistrationScreen.show_popup(self, "Email error", "Email not found")
         print(self.user_id)
 ```
 
@@ -460,18 +460,18 @@ class EntryScreen(MDScreen):
         if title.strip() == "" and question.strip() != "":
             # Only the title is empty
             self.ids.title.error = True
-            RegistrationScreen.show_popup("Title error", "Title cannot be empty")
+            RegistrationScreen.show_popup(self, "Title error", "Title cannot be empty")
 
         elif question.strip() == "" and title.strip() != "":
             # Only the question is empty
             self.ids.question.error = True
-            RegistrationScreen.show_popup("Question Error", "Question cannot be empty")
+            RegistrationScreen.show_popup(self, "Question Error", "Question cannot be empty")
 
         elif title.strip() == "" and question.strip() == "":
             # Both title and question are empty
             self.ids.title.error = True
             self.ids.question.error = True
-            RegistrationScreen.show_popup("Error", "Title and Question cannot be empty")
+            RegistrationScreen.show_popup(self, "Error", "Title and Question cannot be empty")
 
         else:
             # Input is valid
@@ -486,7 +486,7 @@ class EntryScreen(MDScreen):
             self.ids.answer.text = ""
             self.ids.memo.text = ""
             # Visual Output for the user
-            RegistrationScreen.show_popup("Success", "Data inserted successfully")
+            RegistrationScreen.show_popup(self, "Success", "Data inserted successfully")
             # Change the screen
             self.parent.current = "SelectionScreen"
 ```
@@ -513,18 +513,18 @@ class EntryEditScreen(MDScreen)
         if title == "" and question != "":
             # Only the title is empty
             self.ids.titleedit.error = True
-            RegistrationScreen.show_popup("Title error", "Title cannot be empty")
+            RegistrationScreen.show_popup(self, "Title error", "Title cannot be empty")
 
         elif question == "" and title != "":
             # Only the question is empty
             self.ids.questionedit.error = True
-            RegistrationScreen.show_popup("Question Error", "Question cannot be empty")
+            RegistrationScreen.show_popup(self, "Question Error", "Question cannot be empty")
 
         elif title == "" and question == "":
             # Both title and question are empty
             self.ids.titleedit.error = True
             self.ids.questionedit.error = True
-            RegistrationScreen.show_popup("Error", "Title and Question cannot be empty")
+            RegistrationScreen.show_popup(self, "Error", "Title and Question cannot be empty")
 
         else:
             # No errors, data gets updated
