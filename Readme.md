@@ -93,14 +93,13 @@ Considering the clients requirements a GUI application seems to be the best opti
 
 ## List of techniques used
 1. Object Oriented Programming(OOP)
-2. Object Relation Mapping(ORM):SQLite3
-3. KivyMD.app Library
-4. KivyMD.uix Library
-5. For loops
-6. if statements
-7. Password Hashing
-8. Interacting with Databases
-9. Arrays and Lists
+2. KivyMD.app Library
+3. KivyMD.uix Library
+4. For loops
+5. if statements
+6. Password Hashing
+7. Interacting with Databases
+8. Lists
 
 
 ## Development
@@ -268,7 +267,97 @@ class database_handler():
 
 Some of this code is used throughout the program to query data from the tables which made my program efficient as I was not using the same code over and over again.
 
-#### ORM
+#### Key KivyMD elements used
+##### MDScreen
+MDScreen is used to create a different screens within the application.The different screens can be managed by the ScreenManager in kivy md. The examples of MDScreens and MDScreen manager is shown below:
+```.kv
+ScreenManager:
+    LoginScreen:
+        name:"LoginScreen"
 
+    RegistrationScreen:
+        name:"RegistrationScreen"
 
+    EntryScreen:
+        name:"EntryScreen"
+
+    SelectionScreen:
+        name:"SelectionScreen"
+
+    TableScreen:
+        name:"TableScreen"
+
+    DisplayScreen:
+        name:"DisplayScreen"
+
+    EntryEditScreen:
+        name:"EntryEditScreen"
+        
+<DisplayScreen>:
+```
+
+##### MDBoxLayout, MDCard and MDRaisedButton
+MDBoxLayout is a versatile layout function that enables developers to position widgets in a specific arrangement, either vertically or horizontally. And MDCard is also really similar to MDBoxLayout. Both are commonly used to organize multiple widgets, such as buttons, labels, and images, into a cohesive layout. MDBoxLayout,MDCard is highly customizable, making it easy to tailor the layout to specific design needs. On the other hand, "MDRaisedButton"s are specialized button widgets that facilitate user interaction with the application. Here are some examples of MDBoxLayout, MDCard and MDButtons in my code.
+
+##### MDCard
+
+```.kv
+MDCard:
+        size_hint:.6, .8
+        pos_hint: {"center_x":.5, "center_y":.5}
+        orientation:"vertical"
+```
+
+##### MDBoxLayout
+
+```.kv
+MDBoxLayout:
+    size_hint:1, .2
+```
+
+##### MDButtons
+
+```.kv
+MDRaisedButton:
+    id:login
+    text:"Login"
+    on_press: root.try_login()
+    md_bg_color: "#b24403"
+    size_hint: .5, .25
+```
+
+##### MDDataTable
+MDDataTable can be used to display data in a table. I used this to display all entries that belonged to a certain user.
+```.kv
+db = database_handler("user_database.db")
+        query = f"SELECT count(*) FROM entries WHERE user_id = {EntryScreen.user_id}"
+        entrie_num = db.search(query)
+        # print(entrie_num)
+
+        # before the screen is created, this code is run
+        self.data_table = MDDataTable(
+            size_hint=(.8, .5),
+            pos_hint={'center_x': .5, 'center_y': .5},
+            use_pagination=False,
+            check=True,
+            # Defining how long the table is going to be
+            rows_num = entrie_num[0][0],
+            # Title of the columns
+            column_data=[("id", 40),
+                         ("user_id", 30),
+                         ("Title", 33),
+                         ("Question", 40),
+                         ("Answer", 40),
+                         ("Memo", 40)
+                         ]
+        )
+
+        # Add the functions for events of the mouse
+        self.data_table.bind(on_row_press=self.row_pressed)
+        self.data_table.bind(on_check_press=self.check_pressed)
+        self.add_widget(self.data_table)  # Add table to the GUI
+        self.update()
+```
+
+##### MD
 # Criteria D: Functionality
