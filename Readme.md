@@ -19,7 +19,7 @@ Considering the clients requirements a GUI application seems to be the best opti
 4. The journal entries will be displayed separately to each user.
 5. The GUI should have a dark theme.
 6. All the inputting data has to go through validation inorder to stop the user from entering a blank entry.
-7. There should be pop up screens for the user registration.
+7. There should be pop up screens.
 
 
 # Criteria B: Design
@@ -375,5 +375,135 @@ db = database_handler("user_database.db")
         self.update()
 ```
 
-##### MD
+##### MDDialog
+This opens a popup dialog which has a title and a message. I used to this to give out output on several screens. Here is an example in my code.
+```.py
+def show_popup(self, title, message):
+        # Create a dialog with the desired content
+        dialog = MDDialog(
+            title=title,
+            text=message,
+            size_hint=(0.7, 0.3),
+            buttons=[
+                MDFlatButton(
+                    text="Close", on_release=lambda *args: dialog.dismiss()
+                )
+            ],
+        )
+
+        # Open the dialog
+        dialog.open()
+        
+self.show_popup("Email error", "A user from this email already exists")
+```
+
+#### Key functions within the app
+##### Login function
+This code is used to verify the password of an existing user. And if the details do not match with the details in the database errors are shown. If only the password is wrong the text field will be displayed in red. If the email is wrong a popup screen will show and state the error. If the entered data is correct username and user_id are queried and assigned to objects in different classes. The code for the function is displayed below.
+
+    def try_login(self):
+        self.ids.passwd.error = False
+        self.ids.uname.error = False
+        print("User tried to login")
+        self.user_id = 0
+        username = ""
+        # Get the input email and password
+        email = self.ids.uname.text
+        passwd = self.ids.passwd.text
+        db = database_handler("user_database.db")
+        pass_check, uname_check, user_id, username = db.test_login(email, passwd)
+
+        if pass_check and uname_check:
+            print(username)
+            SelectionScreen.user = username
+            EntryScreen.user_id = user_id
+            DisplayScreen.username = username
+            self.parent.current = "SelectionScreen"
+            # Resetting the values
+            self.ids.uname.text = ""
+            self.ids.passwd.text = ""
+
+        elif uname_check and not pass_check:
+            self.ids.passwd.error = True
+
+        else:
+            self.ids.passwd.error = True
+            self.ids.uname.error = True
+            RegistrationScreen.show_popup("Email error", "Email not found")
+        print(self.user_id)
+```
+
+##### Insert data into the table
+This code is used to enter a new entry into the table. This code validates the title and question to not to be empty and if the user were not to enter the data properly popup screens will showup explaining the error to the user. Also the object user_id is inherited from the class LoginScreen or RegistrationScreen.
+```.py
+class EntryScreen(MDScreen):
+    user_id = None
+
+    def insert_data_to_function(self):
+        title = self.ids.title.text
+        question = self.ids.question.text
+        answer = self.ids.answer.text
+        memo = self.ids.memo.text
+
+        if title.strip() == "" and question.strip() != "":
+            self.ids.title.error = True
+            RegistrationScreen.show_popup("Title error", "Title cannot be empty")
+
+        elif question.strip() == "" and title.strip() != "":
+            self.ids.question.error = True
+            RegistrationScreen.show_popup("Question Error", "Question cannot be empty")
+
+        elif title.strip() == "" and question.strip() == "":
+            self.ids.title.error = True
+            self.ids.question.error = True
+            RegistrationScreen.show_popup("Error", "Title and Question cannot be empty")
+
+        else:
+            out_list = (title, question, answer, memo)
+            user_id = self.user_id
+            db = database_handler("user_database.db")
+            db.enter_data_2(user_id, title, question, answer, memo)
+            self.ids.title.text = ""
+            self.ids.question.text = ""
+            self.ids.answer.text = ""
+            self.ids.memo.text = ""
+            RegistrationScreen.show_popup("Success", "Data inserted successfully")
+            self.parent.current = "SelectionScreen"
+```
+
+##### Edit entered data
+This is one of the important parts of the code as it reads data from the database, displays them for the user and let the user edit them and validated by the code to avoid errors. Most of the objects in this code are inherited from another class which also shows how effective using classes are. In this code by using the pre_enter function I display the previously entered data by the user to enable editting them. And when the user decides to submit the data all the data is validated and the errors are displayed through popup screens.
+```.py
+class EntryEditScreen(MDScreen)
+    def on_pre_enter(self, *args):
+        self.ids.titleedit.text = f"{self.title}"
+        self.ids.questionedit.text = f"{self.question}"
+        self.ids.answeredit.text = f"{self.answer}"
+        self.ids.memoedit.text = f"{self.memo}"
+
+    def update(self):
+        title = self.ids.titleedit.text
+        question = self.ids.questionedit.text
+        answer = self.ids.answeredit.text
+        memo = self.ids.memoedit.text
+
+        if title == "" and question != "":
+            self.ids.titleedit.error = True
+            RegistrationScreen.show_popup("Title error", "Title cannot be empty")
+
+        elif question == "" and title != "":
+            self.ids.questionedit.error = True
+            RegistrationScreen.show_popup("Question Error", "Question cannot be empty")
+
+        elif title == "" and question == "":
+            self.ids.titleedit.error = True
+            self.ids.questionedit.error = True
+            RegistrationScreen.show_popup("Error", "Title and Question cannot be empty")
+
+        else:
+            db = database_handler("user_database.db")
+            db.update_data(DisplayScreen.entry_id, title, question, answer, memo)
+            RegistrationScreen.show_popup("Success", "Data updated successfully")
+            self.parent.current = "TableScreen"
+```
 # Criteria D: Functionality
