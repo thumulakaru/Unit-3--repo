@@ -44,6 +44,22 @@ Considering the clients requirements a GUI application seems to be the best opti
 
 **Fig.5** Wireframe Diagram
 
+## Flow Diagrams
+### Login Function
+![](https://github.com/thumulakaru/Unit-3--repo/blob/main/Project/login_function_flow_diag.png.png)
+
+**Fig.6** Flow diagram for the login function 
+
+### Registration Function
+![](https://github.com/thumulakaru/Unit-3--repo/blob/main/Project/_Registration_flow_diag.drawio.png)
+
+**Fig.7** Flow diagram for the registration function
+
+### Insert data
+![](https://github.com/thumulakaru/Unit-3--repo/blob/main/Project/Insert_data_to_flow_diag.drawio.png)
+
+**Fig.8** Flow diagram for entering a new entry into the table
+
 ## Record of Tasks
 | Task No | Planned Action                        | Planned Outcome                                          | Time estimate | Target completion date | Criterion |
 |---------|---------------------------------------|----------------------------------------------------------|---------------|------------------------|-----------|
