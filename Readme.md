@@ -403,8 +403,10 @@ self.show_popup("Email error", "A user from this email already exists")
 #### Key functions within the app
 ##### Login function
 This code is used to verify the password of an existing user. And if the details do not match with the details in the database errors are shown. If only the password is wrong the text field will be displayed in red. If the email is wrong a popup screen will show and state the error. If the entered data is correct username and user_id are queried and assigned to objects in different classes. The code for the function is displayed below.
-
+```.py
+    # User presses the login button
     def try_login(self):
+        # Changing the state of the fields
         self.ids.passwd.error = False
         self.ids.uname.error = False
         print("User tried to login")
@@ -414,9 +416,11 @@ This code is used to verify the password of an existing user. And if the details
         email = self.ids.uname.text
         passwd = self.ids.passwd.text
         db = database_handler("user_database.db")
+        # Get the necessary data from the try_login function
         pass_check, uname_check, user_id, username = db.test_login(email, passwd)
 
         if pass_check and uname_check:
+            # Assigning the values to objects in other classes
             print(username)
             SelectionScreen.user = username
             EntryScreen.user_id = user_id
@@ -427,9 +431,11 @@ This code is used to verify the password of an existing user. And if the details
             self.ids.passwd.text = ""
 
         elif uname_check and not pass_check:
+            # Making the error visible
             self.ids.passwd.error = True
 
         else:
+            # Making the error visible
             self.ids.passwd.error = True
             self.ids.uname.error = True
             RegistrationScreen.show_popup("Email error", "Email not found")
@@ -440,37 +446,48 @@ This code is used to verify the password of an existing user. And if the details
 This code is used to enter a new entry into the table. This code validates the title and question to not to be empty and if the user were not to enter the data properly popup screens will showup explaining the error to the user. Also the object user_id is inherited from the class LoginScreen or RegistrationScreen.
 ```.py
 class EntryScreen(MDScreen):
+    # Defining the variable
     user_id = None
 
+    # Entering a new entry into the database
     def insert_data_to_function(self):
+        # Getting the data from the fields
         title = self.ids.title.text
         question = self.ids.question.text
         answer = self.ids.answer.text
         memo = self.ids.memo.text
 
         if title.strip() == "" and question.strip() != "":
+            # Only the title is empty
             self.ids.title.error = True
             RegistrationScreen.show_popup("Title error", "Title cannot be empty")
 
         elif question.strip() == "" and title.strip() != "":
+            # Only the question is empty
             self.ids.question.error = True
             RegistrationScreen.show_popup("Question Error", "Question cannot be empty")
 
         elif title.strip() == "" and question.strip() == "":
+            # Both title and question are empty
             self.ids.title.error = True
             self.ids.question.error = True
             RegistrationScreen.show_popup("Error", "Title and Question cannot be empty")
 
         else:
+            # Input is valid
             out_list = (title, question, answer, memo)
             user_id = self.user_id
             db = database_handler("user_database.db")
+            # Sending the data to the database
             db.enter_data_2(user_id, title, question, answer, memo)
+            # Resetting the fields
             self.ids.title.text = ""
             self.ids.question.text = ""
             self.ids.answer.text = ""
             self.ids.memo.text = ""
+            # Visual Output for the user
             RegistrationScreen.show_popup("Success", "Data inserted successfully")
+            # Change the screen
             self.parent.current = "SelectionScreen"
 ```
 
@@ -478,32 +495,39 @@ class EntryScreen(MDScreen):
 This is one of the important parts of the code as it reads data from the database, displays them for the user and let the user edit them and validated by the code to avoid errors. Most of the objects in this code are inherited from another class which also shows how effective using classes are. In this code by using the pre_enter function I display the previously entered data by the user to enable editting them. And when the user decides to submit the data all the data is validated and the errors are displayed through popup screens.
 ```.py
 class EntryEditScreen(MDScreen)
+# Inserting data into the text fields before the screen is created
     def on_pre_enter(self, *args):
         self.ids.titleedit.text = f"{self.title}"
         self.ids.questionedit.text = f"{self.question}"
         self.ids.answeredit.text = f"{self.answer}"
         self.ids.memoedit.text = f"{self.memo}"
 
+    # When the user presses the submit button
     def update(self):
+        # Getting the data from the text fields
         title = self.ids.titleedit.text
         question = self.ids.questionedit.text
         answer = self.ids.answeredit.text
         memo = self.ids.memoedit.text
 
         if title == "" and question != "":
+            # Only the title is empty
             self.ids.titleedit.error = True
             RegistrationScreen.show_popup("Title error", "Title cannot be empty")
 
         elif question == "" and title != "":
+            # Only the question is empty
             self.ids.questionedit.error = True
             RegistrationScreen.show_popup("Question Error", "Question cannot be empty")
 
         elif title == "" and question == "":
+            # Both title and question are empty
             self.ids.titleedit.error = True
             self.ids.questionedit.error = True
             RegistrationScreen.show_popup("Error", "Title and Question cannot be empty")
 
         else:
+            # No errors, data gets updated
             db = database_handler("user_database.db")
             db.update_data(DisplayScreen.entry_id, title, question, answer, memo)
             RegistrationScreen.show_popup("Success", "Data updated successfully")
