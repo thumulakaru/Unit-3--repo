@@ -509,4 +509,6 @@ class EntryEditScreen(MDScreen)
             RegistrationScreen.show_popup("Success", "Data updated successfully")
             self.parent.current = "TableScreen"
 ```
+
+A special thanks to Olivia Leung, class of 2025 for the design of the GUI.
 # Criteria D: Functionality
