@@ -1,0 +1,474 @@
+#app.kv
+
+ScreenManager:
+    LoginScreen:
+        name:"LoginScreen"
+
+    RegistrationScreen:
+        name:"RegistrationScreen"
+
+    EntryScreen:
+        name:"EntryScreen"
+
+    SelectionScreen:
+        name:"SelectionScreen"
+
+    TableScreen:
+        name:"TableScreen"
+
+    DisplayScreen:
+        name:"DisplayScreen"
+
+    EntryEditScreen:
+        name:"EntryEditScreen"
+
+<DisplayScreen>:
+    FitImage:
+        source:"https://wallpaperaccess.com/full/6231396.jpg"
+
+    MDLabel:
+        id: display_main_label
+        pos_hint: {"center_x": .5, "center_y": .95}
+        text: "Your Data"
+        halign: "center"
+        font_style: "H2"
+
+    MDBoxLayout:
+        id: display_main_box
+        size_hint: 1, .8
+        orientation: "vertical"
+        pos_hint: {"center_x":.5, "center_y":.5}
+        md_bg_color: "#808080"
+
+        MDBoxLayout:
+            id: display_title_header_box
+            size_hint: 1, .1
+            pos_hint: {"center_x": .5, "center_y": .8}
+            orientation:"vertical"
+
+            MDLabel:
+                id: display_label_title_header
+                text:"Title"
+                font_style:"H5"
+                md_bg_color: "#361500"
+
+        MDBoxLayout:
+            id: display_title_box
+            size_hint: 1, .2
+            orientation: "vertical"
+            pos_hint: {"center_x": .5, "center_y": .7}
+
+            MDLabel:
+                id: display_label_title
+                text: ""
+                pos_hint: {"center_x":.5}
+                halign: "center"
+                md_bg_color: "#6b4239"
+
+        MDBoxLayout:
+            id: display_question_header_box
+            size_hint: 1, .1
+            pos_hint: {"center_x": .5, "center_y": .6}
+            orientation:"vertical"
+
+            MDLabel:
+                id: display_label_question_header
+                text:"Question"
+                font_style:"H5"
+                md_bg_color: "#964B00"
+
+        MDBoxLayout:
+            id: display_question_box
+            size_hint: 1, .2
+            orientation: "vertical"
+            pos_hint: {"center_x": .5, "center_y": .5}
+
+            MDLabel:
+                id: display_label_question
+                text: ""
+                pos_hint: {"center_x":.5}
+                halign: "center"
+                md_bg_color: "#e1b284"
+
+        MDBoxLayout:
+            id: display_answer_header_box
+            size_hint: 1, .1
+            orientation: "vertical"
+            pos_hint: {"center_x": .5, "center_y": .4}
+
+            MDLabel:
+                id: display_label_answer_header
+                text: "Answer"
+                font_style:"H5"
+                md_bg_color: "#e47200"
+
+        MDBoxLayout:
+            id: display_answer_box
+            size_hint: 1, .2
+            orientation: "vertical"
+            pos_hint: {"center_x": .5, "center_y": .3}
+
+            MDLabel:
+                id: display_label_answer
+                text: ""
+                pos_hint: {"center_x":.5}
+                halign: "center"
+                md_bg_color: "#ffa347"
+
+        MDBoxLayout:
+            id: display_memo_header_box
+            size_hint: 1, .1
+            orientation: "vertical"
+            pos_hint: {"center_x": .5, "center_y": .2}
+
+            MDLabel:
+                id: display_label_memo_header
+                text: "Memo"
+                pos_hint: {"center_x":.5}
+                font_style:"H5"
+                md_bg_color: "#48494b"
+
+        MDBoxLayout:
+            size_hint: 1, .2
+            orientation: "vertical"
+            pos_hint: {"center_x": .5, "center_y": .1}
+
+            MDLabel:
+                id: display_label_memo
+                text:""
+                pos_hint: {"center_x":.5}
+                halign: "center"
+                md_bg_color: "#73797a"
+
+
+    MDRaisedButton:
+        id: display_button_back
+        text: "Back"
+        pos_hint: {"center_x":.6, "center_y":.08}
+        md_bg_color: "#896952"
+        on_press: root.parent.current = "TableScreen"
+
+    MDRaisedButton:
+        id: display_button_edit
+        text: "Edit"
+        pos_hint: {"center_x":.515, "center_y":.08}
+        md_bg_color: "#74421f"
+        on_press: root.edit_record()
+
+    MDRaisedButton:
+        id: display_button_delete
+        pos_hint: {"center_x":.4, "center_y":.08}
+        text: "Delete record"
+        md_bg_color: "#4e3123"
+        on_press: root.delete_one()
+
+<LoginScreen>:
+    FitImage:
+        source:"https://wallpaperaccess.com/full/6231396.jpg"
+
+    MDCard:
+        size_hint:.6, .8
+        pos_hint: {"center_x":.5, "center_y":.5}
+        orientation:"vertical"
+
+        MDLabel:
+            size_hint:1, .1
+            font_style:"H2"
+            text: "Login"
+
+        MDTextField:
+            id:uname
+            hint_text:"Enter email"
+            size_hint_x: .8
+            text: ""
+            pos_hint: {"center_x":.5}
+
+        MDTextField:
+            id:passwd
+            hint_text:"Enter password"
+            password: True
+            text: ""
+            size_hint_x: .8
+            pos_hint:{"center_x":.5}
+
+        MDBoxLayout:
+            size_hint:1, .2
+            MDRaisedButton:
+                id:login
+                text:"Login"
+                on_press: root.try_login()
+                md_bg_color: "#b24403"
+                size_hint: .5, .25
+
+            MDRaisedButton:
+                id:registration
+                text:"Registration"
+                on_press: root.parent.current = "RegistrationScreen"
+                md_bg_color: "#5b2b25"
+                size_hint: .5, .25
+
+
+<RegistrationScreen>
+    FitImage:
+        source:"https://wallpaperaccess.com/full/6231396.jpg"
+
+    MDCard:
+        size_hint:.6, .8
+        pos_hint: {"center_x":.5, "center_y":.5}
+        orientation:"vertical"
+
+        MDLabel:
+            size_hint:1, .1
+            font_style:"H2"
+            text: "Registration"
+
+        MDTextField:
+            id:uname
+            hint_text:"Enter username"
+            size_hint_x: .8
+            pos_hint: {"center_x":.5}
+
+        MDTextField:
+            id:email
+            hint_text:"Enter email"
+            size_hint_x: .8
+            pos_hint: {"center_x":.5}
+
+        MDTextField:
+            id:passwd1
+            hint_text:"Enter password"
+            password: True
+            size_hint_x: .8
+            pos_hint:{"center_x":.5}
+
+        MDTextField:
+            id:passwd2
+            hint_text:"Confirm the password"
+            password: True
+            size_hint_x: .8
+            pos_hint:{"center_x":.5}
+
+        MDBoxLayout:
+            size_hint:1, .2
+            MDRaisedButton:
+                id:register
+                text:"Register"
+                md_bg_color: "#5b2b25"
+                on_press: root.try_register()
+                size_hint: .5, .5
+
+            MDRaisedButton:
+                id:back
+                text:"Back"
+                md_bg_color: "#896952"
+                on_press: root.parent.current = "LoginScreen"
+                size_hint: .5, .5
+
+<EntryScreen>
+    FitImage:
+        source:"https://wallpaperaccess.com/full/6231396.jpg"
+
+    MDCard:
+        size_hint: .6, .8
+        pos_hint: {"center_x":.5, "center_y":.5}
+        orientation:"vertical"
+
+        MDBoxLayout:
+            id:titlebox
+            orientation:"horizontal"
+            size_hint: 1, .20
+
+            MDLabel:
+                text: "Entry Screen"
+                font_size: 30
+                halign: "center"
+
+        MDBoxLayout:
+            id:firstbox
+            size_hint: 1, .20
+            orientation: "horizontal"
+
+            MDTextField:
+                id: title
+                hint_text: "Title is required"
+
+        MDBoxLayout:
+            id:secondbox
+            size_hint: 1, .20
+            orientation: "horizontal"
+
+            MDTextField:
+                id: question
+                hint_text: "Question is required"
+
+        MDBoxLayout:
+            id:thirdbox
+            size_hint: 1, .20
+            orientation: "horizontal"
+
+            MDTextField:
+                id: answer
+                hint_text: "Answer"
+                color: "#000000"
+
+        MDBoxLayout:
+            id: fourthbox
+            size_hint: 1, .20
+            orientation: "vertical"
+
+            MDTextField:
+                id: memo
+                hint_text: "Memos"
+
+    MDRaisedButton:
+        id: submit
+        text: "Submit"
+        md_bg_color: "#74421f"
+        pos_hint: {"center_x":.45, "center_y":.07}
+        on_press: root.insert_data_to_function()
+
+    MDRaisedButton:
+        id: back
+        text: "Back"
+        md_bg_color:"#896952"
+        pos_hint: {"center_x":.55, "center_y":.07}
+        on_press: root.parent.current = "SelectionScreen"
+
+<EntryEditScreen>
+    FitImage:
+        source:"https://wallpaperaccess.com/full/6231396.jpg"
+
+    MDCard:
+        size_hint: .6, .8
+        pos_hint: {"center_x":.5, "center_y":.5}
+        orientation:"vertical"
+
+        MDBoxLayout:
+            id:titlebox
+            orientation:"horizontal"
+            size_hint: 1, .20
+
+            MDLabel:
+                id: heading_edit
+                text: "Entry Screen"
+                font_size: 30
+                halign: "center"
+
+        MDBoxLayout:
+            id:firstbox
+            size_hint: 1, .20
+            orientation: "horizontal"
+
+            MDTextField:
+                id: titleedit
+                hint_text: "Title goes here"
+
+        MDBoxLayout:
+            id:secondbox
+            size_hint: 1, .20
+            orientation: "horizontal"
+
+            MDTextField:
+                id: questionedit
+                hint_text: "Question goes here"
+
+        MDBoxLayout:
+            id:thirdbox
+            size_hint: 1, .20
+            orientation: "horizontal"
+
+            MDTextField:
+                id: answeredit
+                hint_text: "Answer goes here"
+                color: "#000000"
+
+        MDBoxLayout:
+            id: fourthbox
+            size_hint: 1, .20
+            orientation: "vertical"
+
+            MDTextField:
+                id: memoedit
+                hint_text: "Memo goes here"
+
+    MDRaisedButton:
+        id: submit
+        text: "Submit"
+        pos_hint: {"center_x":.45, "center_y":.07}
+        md_bg_color: "#74411e"
+        on_press: root.update()
+
+    MDRaisedButton:
+        id: back
+        text: "Back"
+        pos_hint: {"center_x":.55, "center_y":.07}
+        md_bg_color: "#896952"
+        on_press: root.parent.current = "TableScreen"
+
+<SelectionScreen>
+    FitImage:
+        source:"https://wallpaperaccess.com/full/6231396.jpg"
+
+    MDLabel:
+        id: select_user_label
+        text: "Select"
+        pos_hint: {"center_x":.5, "center_y":.9}
+        font_style: "H3"
+        halign: "center"
+
+    MDRaisedButton:
+        id: selectionentry
+        text: "Make a new entry"
+        on_press: root.parent.current = "EntryScreen"
+        pos_hint: {"center_x":.5, "center_y":.6}
+        md_bg_color: "#361500"
+
+    MDRaisedButton:
+        id: selectionview
+        text: "View all entries"
+        on_press: root.parent.current = "TableScreen"
+        pos_hint: {"center_x":.5, "center_y":.5}
+        md_bg_color: "#8B4411"
+
+    MDRaisedButton:
+        id: selectionback
+        text: "Log out"
+        on_press: root.parent.current = "LoginScreen"
+        pos_hint: {"center_x":.5, "center_y":.4}
+        md_bg_color: "#b24403"
+
+<TableScreen>
+    FitImage:
+        source:"https://wallpaperaccess.com/full/6231396.jpg"
+
+    MDLabel:
+        halign: "center"
+        text: "Entries"
+        pos_hint: {"center_x":.5, "center_y":.9}
+        font_style: "H3"
+    MDBoxLayout:
+        size_hint: 1, .2
+        pos_hint_y: .2
+        orientation: "vertical"
+
+        MDLabel:
+            id: tablelabel1
+            text: "Click the checkbox of the entry that you want to view."
+            size_hint: 1, .2
+            orientation: "vertical"
+            halign: "center"
+
+        MDLabel:
+            id: tablelabel2
+            text: "Clicking the first checkbox will take you to the very first entry."
+            size_hint: 1, .2
+            orientation: "vertical"
+            halign: "center"
+
+        MDRaisedButton:
+            id: table_back
+            text: "Back"
+            on_press: root.parent.current = "SelectionScreen"
+            pos_hint: {"center_x":.5, "center_y":.7}
+            md_bg_color: "#896952"
+            halign: "center"
