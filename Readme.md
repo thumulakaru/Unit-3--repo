@@ -557,6 +557,7 @@ A special thanks to Olivia Leung, class of 2025 for the design of the GUI.
 
 ## Appendix
 ### Client agreement
+![](https://github.com/thumulakaru/Unit-3--repo/blob/main/Project/Client_agreenment.jpg)
 
-### Client feedback
+**Fig.9** An image of the client agreement
 
