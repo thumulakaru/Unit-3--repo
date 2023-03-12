@@ -555,6 +555,8 @@ A special thanks to Olivia Leung, class of 2025 for the design of the GUI.
 ## Project Demonstration
 [Link for the video](https://drive.google.com/file/d/1VSOciE6K-yTsEfyFTkOiwJUjVxxM9YoE/view?usp=share_link)
 
+[First video](https://www.youtube.com/watch?v=j5a0jTc9S10&t=3s)
+
 ## Appendix
 ### Client agreement
 ![](https://github.com/thumulakaru/Unit-3--repo/blob/main/Project/Client_agreenment.jpg)
